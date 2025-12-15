@@ -179,6 +179,10 @@ p {
   margin-bottom: 0.5rem;
 }
 
+i {
+  color: var(--text-primary);
+}
+
 strong {
   color: var(--text-primary);
   font-weight: 600;
@@ -187,6 +191,7 @@ strong {
 /* Bio Section */
 .bio-section p {
   font-size: 1.125rem;
+  text-align: justify;
   line-height: 1.8;
   color: var(--text-secondary);
 }
@@ -250,6 +255,7 @@ strong {
 
 .description {
   margin-bottom: 1rem;
+  text-align: justify;
 }
 
 .sub-heading {
@@ -328,6 +334,22 @@ strong {
   background-color: var(--surface-color);
 }
 
+.footer-text {
+  margin-top: 20px;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+}
+
+.footer-text a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
 
 /* Responsive */
