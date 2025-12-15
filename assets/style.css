@@ -353,7 +353,7 @@ strong {
 
 /* Controls Group */
 .controls {
-  position: fixedg;
+  position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
   display: flex;
