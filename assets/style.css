@@ -1,11 +1,23 @@
 :root {
-  --bg-color: #f8fafc;
+  /* Catppuccin Latte (Light) */
+  --bg-color: #eff1f5;
+  /* Base */
   --surface-color: #ffffff;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --accent-color: #3b82f6;
-  --border-color: #e2e8f0;
-  --hover-color: #f1f5f9;
+  /* White */
+  --text-primary: #4c4f69;
+  /* Text */
+  --text-secondary: #6c6f85;
+  /* Subtext0 */
+  --accent-color: #1e66f5;
+  /* Blue */
+  --border-color: #ccd0da;
+  /* Surface0 */
+  --hover-color: #e6e9ef;
+  /* Mantle */
+  --gradient-1: rgba(30, 102, 245, 0.15);
+  /* Blue */
+  --gradient-2: rgba(136, 57, 239, 0.15);
+  /* Mauve */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
   --radius-md: 0.75rem;
@@ -15,13 +27,25 @@
 }
 
 [data-theme="dark"] {
-  --bg-color: #0f172a;
-  --surface-color: #1e293b;
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --accent-color: #60a5fa;
-  --border-color: #334155;
-  --hover-color: #334155;
+  /* Catppuccin Mocha (Dark) */
+  --bg-color: #1e1e2e;
+  /* Base */
+  --surface-color: #313244;
+  /* Surface0 */
+  --text-primary: #cdd6f4;
+  /* Text */
+  --text-secondary: #a6adc8;
+  /* Subtext0 */
+  --accent-color: #89b4fa;
+  /* Blue */
+  --border-color: #45475a;
+  /* Surface1 */
+  --hover-color: #45475a;
+  /* Surface1 */
+  --gradient-1: rgba(137, 180, 250, 0.15);
+  /* Blue */
+  --gradient-2: rgba(203, 166, 247, 0.15);
+  /* Mauve */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.7), 0 2px 4px -1px rgb(0 0 0 / 0.4);
 }
@@ -59,7 +83,7 @@ body {
   left: -10%;
   width: 50vw;
   height: 50vw;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(248, 250, 252, 0) 70%);
+  background: radial-gradient(circle, var(--gradient-1) 0%, transparent 70%);
   z-index: -1;
   pointer-events: none;
 }
@@ -70,7 +94,7 @@ body {
   right: -10%;
   width: 50vw;
   height: 50vw;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, rgba(248, 250, 252, 0) 70%);
+  background: radial-gradient(circle, var(--gradient-2) 0%, transparent 70%);
   z-index: -1;
   pointer-events: none;
 }
@@ -83,6 +107,7 @@ body {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border-color);
+  position: relative;
 }
 
 /* Header */
@@ -303,36 +328,7 @@ strong {
   background-color: var(--surface-color);
 }
 
-/* Download FAB */
-.download-fab {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 100;
-}
 
-.download-fab a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  background-color: var(--text-primary);
-  border-radius: 50%;
-  box-shadow: var(--shadow-md);
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.download-fab a:hover {
-  transform: scale(1.1);
-  background-color: var(--accent-color);
-}
-
-.download-fab img {
-  filter: brightness(0) invert(1);
-  /* Make black icon white */
-  width: 24px;
-}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -355,28 +351,50 @@ strong {
   }
 }
 
-/* Theme Toggle Button */
-.theme-toggle {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+/* Controls Group */
+.controls {
+  position: fixedg;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  padding: 0.25rem;
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
+}
+
+.control-btn {
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   color: var(--text-secondary);
-  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s ease;
+  text-decoration: none;
 }
 
-.theme-toggle:hover {
-  background-color: var(--hover-color);
+.control-btn:hover {
   color: var(--accent-color);
+  background-color: var(--surface-color);
+  box-shadow: var(--shadow-sm);
 }
 
-.theme-toggle i {
-  font-size: 1.25rem;
+.control-btn i {
+  font-size: 1.1rem;
+}
+
+.control-divider {
+  width: 1px;
+  height: 1.5rem;
+  background-color: var(--border-color);
+  margin: 0 0.125rem;
 }
