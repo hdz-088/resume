@@ -22,8 +22,8 @@
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
   --radius-md: 0.75rem;
   --radius-sm: 0.5rem;
-  --font-heading: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
 }
 
 [data-theme="dark"] {
@@ -354,22 +354,117 @@ strong {
 
 /* Responsive */
 @media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
   #container {
-    padding: 1.5rem;
-    width: 95%;
+    padding: 2rem;
+    width: 100%;
   }
 
   .profile-header h1 {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
 
   .card-header {
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.5rem;
   }
 
   .card-header .meta {
     align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  #container {
+    padding: 1.5rem 1rem;
+  }
+
+  .profile-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .profile-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .social-links {
+    gap: 1rem;
+  }
+
+  .social-links a {
+    font-size: 1.1rem;
+  }
+
+  section h2 {
+    font-size: 1.25rem;
+  }
+
+  .bio-section p {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  .card {
+    padding: 1.25rem 1rem;
+  }
+
+  .card-header h3,
+  .card-header-row h3 {
+    font-size: 1.15rem;
+    line-height: 1.4;
+  }
+
+  .card-header .meta {
+    font-size: 0.8rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .styled-list li {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .sub-heading {
+    font-size: 0.9rem;
+  }
+
+  .skills-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .skill-category {
+    font-size: 0.9rem;
+  }
+
+  .tag {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .controls {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .control-btn {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
   }
 }
 
